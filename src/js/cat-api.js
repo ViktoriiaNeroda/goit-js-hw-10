@@ -9,8 +9,7 @@ export const apiTheCatApi = axios.create({
 });
 
  export const fetchBreeds = () => {
-  return apiTheCatApi
-    .get('/v1/breeds')
+  return apiTheCatApi.get('/v1/breeds')
     .then(response => {
       if (response.status !== 200) {
         throw new Error(response.status);
