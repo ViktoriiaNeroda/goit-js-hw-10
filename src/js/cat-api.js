@@ -9,7 +9,6 @@ export const apithecatApi = axios.create({
   baseURL: 'https://api.thecatapi.com',
 });
 
-
  export const fetchBreeds = () => {
   return apithecatApi.get('/v1/breeds')
     .then(response => {

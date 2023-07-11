@@ -1,6 +1,7 @@
 import { fetchBreeds, fetchCatImg } from './js/cat-api';
 import './styles.css';
 import SlimSelect from 'slim-select';
+
 import { Report } from 'notiflix/build/notiflix-report-aio';
 
 const ref = {
