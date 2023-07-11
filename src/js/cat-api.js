@@ -11,7 +11,10 @@ export const apithecatApi = axios.create({
  export const fetchBreeds = () => {
   return apithecatApi.get('/v1/breeds')
     .then(response => {
-      
+      if (response.status !== 200) {
+        throw new Error(response.status);
+      }
+
       return response.data;
     })
     .catch(error => {

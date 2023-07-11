@@ -75,7 +75,7 @@ h2 {
     justify-content: center;
 }
 
-/* .visually-hidden {
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -86,7 +86,7 @@ h2 {
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
-} */
+}
 
 .loader {
     width: 48px;
@@ -94,13 +94,13 @@ h2 {
     border-radius: 50%;
     display: inline-block;
     position: relative;
-    /* border: 3px solid;
-    border-color: #fff #fff transparent transparent; */
-    /* box-sizing: border-box;
-    animation: rotation 1s linear infinite; */
+    border: 3px solid;
+    border-color: #fff #fff transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
 
-/* .loader::after,
+.loader::after,
 .loader::before {
     content: '';
     box-sizing: border-box;
@@ -116,17 +116,17 @@ h2 {
     height: 40px;
     border-radius: 50%;
     box-sizing: border-box;
-    /* animation: rotationBack 0.5s linear infinite;
-    transform-origin: center center; */
-/* }
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+     }
 
 .loader::before {
     width: 32px;
     height: 32px;
-    border-color: #fff #fff transparent transparent; */ 
-    /* animation: rotation 1.5s linear infinite; */
-/* } */
-/* 
+    border-color: #fff #fff transparent transparent; 
+    animation: rotation 1.5s linear infinite; 
+    }
+ 
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
@@ -145,7 +145,7 @@ h2 {
     100% {
         transform: rotate(-360deg);
     }
-} */
+} 
 
 .is-hidden {
     visibility: hidden;
