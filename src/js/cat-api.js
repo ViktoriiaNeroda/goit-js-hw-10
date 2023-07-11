@@ -10,7 +10,8 @@ export const apithecatApi = axios.create({
 });
 
  export const fetchBreeds = () => {
-  return apithecatApi.get('/v1/breeds')
+  return apithecatApi
+    .get('/v1/breeds')
     .then(response => {
       if (response.status !== 200) {
         throw new Error(response.status);
@@ -21,12 +22,14 @@ export const apithecatApi = axios.create({
     .catch(error => {
       console.log(error);
       Notiflix.Report.warning(
-        'Sorry, try again',
+        'UPS',
+        'Try again!',
+        'Okey',
         {
           width: '320px',
           svgSize: '30px',
           messageFontSize: '16px',
-          backgroundColor: 'purple',
+          backgroundColor: '#e42525cd',
           warning: {
             svgColor: '#f6c218',
             titleColor: '#f6c218',
@@ -40,7 +43,6 @@ export const apithecatApi = axios.create({
       throw error;
     });
 };
-
 export const fetchCatImg = breedId => {
   return apithecatApi
     .get(`/v1/images/search?breed_ids=${breedId}`)
