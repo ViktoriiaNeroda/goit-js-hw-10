@@ -8,7 +8,8 @@ import Notiflix from 'notiflix';
 export const apithecatApi = axios.create({baseURL: 'https://api.thecatapi.com/v1'});
 
  export const fetchBreeds = () => {
-  return apithecatApi.get(`/breeds/`).then(response => {
+   return apithecatApi.get(`/breeds/`)
+     .then(response => {
       
       return response.data;
     })
