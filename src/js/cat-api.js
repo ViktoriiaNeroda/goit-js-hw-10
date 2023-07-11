@@ -11,7 +11,7 @@ export const apithecatApi = axios.create({
 
  export const fetchBreeds = () => {
   return apithecatApi
-    .get('/breeds')
+    .get(`/breeds`)
     .then(response => {
       if (response.status !== 200) {
         throw new Error(response.status);
