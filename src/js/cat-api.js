@@ -1,23 +1,16 @@
-
-import Notiflix from 'notiflix';
-import axios from "axios";
-
- axios.defaults.headers.common['x-api-key'] =
-  'live_5nVcm90UjcYCONd9Zs2kschF0jkgo3s2QaiMfSC29wag3Gq3MUs29a71K8YESRT7';
-
-export const apithecatApi = axios.create({
-  baseURL: 'https://api.thecatapi.com',
-});
+const apiKey = 'live_5nVcm90UjcYCONd9Zs2kschF0jkgo3s2QaiMfSC29wag3Gq3MUs29a71K8YESRT7';
 
 export const fetchBreeds = () => {
-  return apithecatApi
-    .get('/v1/breeds')
+  return fetch('https://api.thecatapi.com/v1/breeds', {
+    headers: {
+      'x-api-key': apiKey
+    }
+  })
     .then(response => {
-      if (response.status !== 200) {
+      if (!response.ok) {
         throw new Error(response.status);
       }
-
-      return response.data;
+      return response.json();
     })
     .catch(error => {
       console.log(error);
@@ -26,17 +19,18 @@ export const fetchBreeds = () => {
 };
 
 export const fetchCatImg = breedId => {
-  return apithecatApi
-    .get(`/v1/images/search?breed_ids=${breedId}`)
+  return fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`, {
+    headers: {
+      'x-api-key': apiKey
+    }
+  })
     .then(response => {
-      if (response.status !== 200) {
+      if (!response.ok) {
         throw new Error(response.status);
       }
-
-      return response.data;
+      return response.json();
     })
     .catch(error => {
-     
       console.log(error);
       throw error;
     });
