@@ -124,5 +124,3 @@ ref.selectBread.addEventListener('change', evt => {
       throw error;
     });
 });
-
-// onFetchError();
